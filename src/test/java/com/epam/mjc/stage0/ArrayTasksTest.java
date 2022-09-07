@@ -25,7 +25,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ArrayTasksTest {
 
-    private static final Random RANDOM = new Random();
+   private static final Random RANDOM = new Random();
 
     private final ArrayTasks arrayTasks = new ArrayTasks();
 
@@ -86,14 +86,13 @@ public class ArrayTasksTest {
         assertArrayEquals(expectedArr, arrayTasks.getOnlyPositiveNumbers(arr));
     }
 
-    @ParameterizedTest
+   @ParameterizedTest
     @MethodSource("sortRaggedArrayProvider")
     public void sortRaggedArrayTest(RaggedArray arr, RaggedArray expectedArr) {
 
         assertArrayEquals(expectedArr.getArr(), arrayTasks.sortRaggedArray(arr.getArr()),
                 "I think, something went wrong with sorting ragged array implementation");
     }
-
 
     private static Stream<Arguments> totalSumTestProvider() {
         return getIntArraysStream(4, 100, 1000)
